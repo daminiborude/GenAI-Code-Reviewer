@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # Setting up the API key
-genai.configure(api_key="Enter your API Key here...")
+genai.configure(api_key="Enter Your API-Key Here")
 
 # Setting up the headers
 st.title("🤖:blue[AI Code Reviewer for Developers!]")
@@ -44,7 +44,7 @@ If the input code is invalid, kindly inform the user.
 """
 
 # Setting up the generative model
-model = genai.GenerativeModel(model_name="models/gemini-1.5-flash", system_instruction=sys_prompt)
+model = genai.GenerativeModel(model_name="models/gemini-2.5-flash", system_instruction=sys_prompt)
 
 # Generate response when the button is clicked
 button = st.button(":green[Review My Code! 🚀]")
@@ -57,3 +57,4 @@ if button:
         st.write(response.text)
     except Exception as e:
         st.error(f"An error occurred: {e}")
+
